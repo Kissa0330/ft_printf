@@ -10,7 +10,7 @@ int main(int argc, char const *argv[])
 	void *arr = &c;
 	int hex = 5000;
 
-	//TODO hexのマイナスの場合の動作が未定義
+	//TODO ft_puthexの引数がマイナスの場合の動作が未定義
 	ft_printf("///////////////////////////\nft_printf test\n");
 	ft_printf("nbr_test1 = %d /// nbr_test2 = %u /// string_test = %s /// char_test = %c /// percent_test = %% /// pointer_test = %p /// hex_test = %x, %X\n", d, u, str, c, arr, hex, hex);
 	ft_printf("///////////////////////////\n\n");
