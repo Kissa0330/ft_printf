@@ -1,10 +1,28 @@
 #include "ft_printf.h"
 
-char	*ft_changehex(long long nbr)
+int	ft_binarytodecimal(int *binary)
 {
-	char		*hex;
-	long long	len;
-	long long	i;
+	int	i;
+	int	decimal;
+	int	multiplynum;
+
+	i = 0;
+	decimal = 0;
+	multiplynum = 1;
+	while (i < 31)
+	{
+		decimal += binary[i] * multiplynum;
+		multiplynum *= 2;
+		i++;
+	}
+	return decimal;
+}
+
+char	*ft_changehex(int nbr)
+{
+	char	*hex;
+	int		len;
+	int		i;
 
 	i = nbr;
 	len = 1;
@@ -26,13 +44,13 @@ char	*ft_changehex(long long nbr)
 	return (hex);
 }
 
-void	ft_puthex(long long nbr, char format)
+void	ft_puthex(int nbr, char format)
 {
 	char	*str;
 	size_t	i;
 
 	i = 0;
-	str = ft_changehex(nbr);
+	str = ft_changehex(ft_binarytodecimal(ft_decimaltobinary(nbr)));
 	if(format == 'X')
 	{
 		while (str[i] != '\0')

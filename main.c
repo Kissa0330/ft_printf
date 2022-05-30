@@ -8,7 +8,7 @@ int main(int argc, char const *argv[])
 	char *str = "str";
 	char c = 'a';
 	void *arr = &c;
-	int hex = 5000;
+	int hex = -25;
 
 	//TODO ft_puthexの引数がマイナスの場合の動作が未定義
 	ft_printf("///////////////////////////\nft_printf test\n");

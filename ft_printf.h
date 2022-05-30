@@ -6,6 +6,7 @@
 
 void	ft_putnbr(long long n);
 void	ft_putaddress(void *arr);
-void	ft_puthex(long long nbr, char format);
+void	ft_puthex(int nbr, char format);
+int		*ft_decimaltobinary(int num);
 
 #endif
