@@ -1,5 +1,4 @@
 #include "ft_printf.h"
-#include <stdio.h>
 
 unsigned int	ft_binarytodecimal(int *binary)
 {
