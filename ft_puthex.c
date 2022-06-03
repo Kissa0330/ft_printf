@@ -44,7 +44,7 @@ char	*ft_changehex(unsigned int nbr)
 	return (hex);
 }
 
-void	ft_puthex(int nbr, char format)
+int	ft_puthex(int nbr, char format)
 {
 	char	*str;
 	size_t	i;
@@ -60,4 +60,5 @@ void	ft_puthex(int nbr, char format)
 		}
 	}
 	ft_putstr_fd(str, 1);
+	return (ft_strlen(str));
 }

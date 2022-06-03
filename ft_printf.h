@@ -2,11 +2,13 @@
 # define FT_PRINTF_H
 
 #include <stdarg.h>
+#include <stdint.h>
 #include "./libft/libft.h"
 
-void	ft_putnbr(long long n);
-void	ft_putaddress(void *arr);
-void	ft_puthex(int nbr, char format);
+int		ft_putnbr(long long n);
+int		ft_putpt(uintptr_t pt);
+int		ft_puthex(int nbr, char format);
 int		*ft_decimaltobinary(int num);
+char	*ft_changehex(unsigned int nbr);
 
 #endif
