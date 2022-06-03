@@ -26,10 +26,10 @@ int	put_nbrs(char tgt, int nbr)
 
 int	put_str(char *s)
 {
-	if(s == NULL)
+	if (s == NULL)
 	{
 		ft_putstr_fd("(null)", 1);
-		return(6 - 2);
+		return (6 - 2);
 	}
 	ft_putstr_fd(s, 1);
 	return (ft_strlen(s) - 2);
