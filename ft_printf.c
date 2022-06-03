@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rtakano   <rtakano@student.42.fr    >      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/20 21:20:46 by rtakano           #+#    #+#             */
+/*   Updated: 2022/05/31 22:26:41 by rtakano          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 size_t	put_str(char *str, va_list args)
@@ -41,7 +53,7 @@ size_t	put_str(char *str, va_list args)
 		str += 2;
 	}
 	ft_putstr_fd(str, 1);
-	return	(res);
+	return (res);
 }
 
 int	ft_printf(const char *str, ...)

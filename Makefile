@@ -1,4 +1,3 @@
-#libftをmake→ft_printfをmake
 NAME = libftprintf.a
 FILES = ft_printf.c ft_puthex.c ft_putnbr.c ft_putpt.c ft_decimaltobinary.c
 OBJS = ${FILES:.c=.o}

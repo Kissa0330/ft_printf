@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rtakano   <rtakano@student.42.fr    >      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/24 15:55:36 by rtakano           #+#    #+#             */
+/*   Updated: 2022/05/31 22:25:43 by rtakano          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 void	putnbr(long long n, int *len)
@@ -15,7 +27,7 @@ void	putnbr(long long n, int *len)
 
 int	ft_putnbr(long long n)
 {
-	int *res;
+	int	*res;
 
 	res = malloc(sizeof(int));
 	*res = 0;
