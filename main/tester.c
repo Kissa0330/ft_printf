@@ -15,9 +15,9 @@ int ft_printf(const char *str, ...);
 
 int main(int argc, char const *argv[])
 {
-	int d = 3;
+	int d = -3;
 	unsigned int u = 2111111;
-	char *str = "testtest";
+	char *str = NULL;
 	char c = 'a';
 	int hex = 1234355674;
 	void *arr = &hex;

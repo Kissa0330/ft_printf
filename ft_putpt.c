@@ -31,11 +31,14 @@ void	putpt(uintptr_t pt, int *len)
 
 int	ft_putpt(uintptr_t pt)
 {
-	int	*res;
+	int	*tmp;
+	int	res;
 
-	res = malloc(sizeof(int));
+	tmp = malloc(sizeof(int));
 	ft_putstr_fd("0x", 1);
-	*res = 2;
-	putpt(pt, res);
-	return (*res);
+	*tmp = 2;
+	putpt(pt, tmp);
+	res = *tmp;
+	free(tmp);
+	return (res);
 }

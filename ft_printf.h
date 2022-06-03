@@ -18,7 +18,8 @@
 # include "./libft/libft.h"
 
 int		ft_printf(const char *str, ...);
-int		ft_putnbr(long long n);
+int		ft_putnbr(int n);
+int		ft_putunsignednbr(unsigned int n);
 int		ft_putpt(uintptr_t pt);
 int		ft_puthex(int nbr, char format);
 int		*ft_decimaltobinary(int num);

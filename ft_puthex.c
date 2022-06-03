@@ -27,6 +27,7 @@ unsigned int	ft_binarytodecimal(int *binary)
 		multiplynum *= 2;
 		i--;
 	}
+	free(binary);
 	return (decimal);
 }
 
@@ -59,6 +60,7 @@ char	*ft_changehex(unsigned int nbr)
 int	ft_puthex(int nbr, char format)
 {
 	char	*str;
+	int		res;
 	size_t	i;
 
 	i = 0;
@@ -72,5 +74,7 @@ int	ft_puthex(int nbr, char format)
 		}
 	}
 	ft_putstr_fd(str, 1);
-	return (ft_strlen(str));
+	res = ft_strlen(str);
+	free(str);
+	return (res);
 }
