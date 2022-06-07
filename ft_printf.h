@@ -16,10 +16,10 @@
 # include <stdarg.h>
 # include <stdint.h>
 # include "./libft/libft.h"
+# define FORMAT_SIZE 2
 
 int		ft_printf(const char *str, ...);
-int		ft_putnbr(int n);
-int		ft_putunsignednbr(unsigned int n);
+void	ft_putnbr(long long n, int *len);
 int		ft_putpt(uintptr_t pt);
 int		ft_puthex(int nbr, char format);
 int		*ft_decimaltobinary(int num);

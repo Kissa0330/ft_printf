@@ -12,28 +12,28 @@
 
 #include "ft_printf.h"
 
-int	*changebinarynum(int *binarynum, int num, int negativeflag)
+int	*changebinarynum(int *binarynum, int num, int isnegative)
 {
-	int	i;
+	int	bit;
 
-	i = 31;
-	if (negativeflag == 1)
+	bit = 31;
+	if (isnegative == 1)
 	{
 		num = num * -1 - 1;
 		while (num)
 		{
-			binarynum[i] -= num % 2;
+			binarynum[bit] -= num % 2;
 			num /= 2;
-			i --;
+			bit --;
 		}
 	}
-	else if (negativeflag == 0)
+	else if (isnegative == 0)
 	{
 		while (num)
 		{
-			binarynum[i] += num % 2;
+			binarynum[bit] += num % 2;
 			num /= 2;
-			i --;
+			bit --;
 		}
 	}
 	return (binarynum);

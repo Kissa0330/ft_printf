@@ -14,18 +14,18 @@
 
 unsigned int	ft_binarytodecimal(int *binary)
 {
-	int				i;
+	int				bit;
 	unsigned int	decimal;
 	unsigned int	multiplynum;
 
-	i = 31;
+	bit = 31;
 	decimal = 0;
 	multiplynum = 1;
-	while (i >= 0)
+	while (bit >= 0)
 	{
-		decimal += binary[i] * multiplynum;
+		decimal += binary[bit] * multiplynum;
 		multiplynum *= 2;
-		i--;
+		bit --;
 	}
 	free(binary);
 	return (decimal);
@@ -44,7 +44,8 @@ char	*ft_changehex(unsigned int nbr)
 		len++;
 		nbr /= 16;
 	}
-	hex = malloc(sizeof(char) * len);
+	hex = malloc(sizeof(char) * (len + 1));
+	hex[len] = '\0';
 	nbr = i;
 	while (len--)
 	{

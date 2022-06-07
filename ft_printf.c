@@ -12,15 +12,16 @@
 
 #include "ft_printf.h"
 
-int	put_nbrs(char tgt, int nbr)
+int	put_nbrs(char tgt, long long nbr)
 {
 	int	res;
 
 	res = 0;
 	if (tgt == 'd' || tgt == 'i')
-		res = ft_putnbr(nbr) - 2;
+		ft_putnbr((int)nbr, &res);
 	else if (tgt == 'u')
-		res = ft_putunsignednbr((unsigned int)nbr) - 2;
+		ft_putnbr((unsigned int)nbr , &res);
+	res -= FORMAT_SIZE;
 	return (res);
 }
 
@@ -29,16 +30,16 @@ int	put_str(char *s)
 	if (s == NULL)
 	{
 		ft_putstr_fd("(null)", 1);
-		return (6 - 2);
+		return (6 - FORMAT_SIZE);
 	}
 	ft_putstr_fd(s, 1);
-	return (ft_strlen(s) - 2);
+	return (ft_strlen(s) - FORMAT_SIZE);
 }
 
 int	put_char(char c)
 {
 	ft_putchar_fd(c, 1);
-	return (1 - 2);
+	return (1 - FORMAT_SIZE);
 }
 
 int	judge_str(char *str, va_list args)
@@ -59,9 +60,9 @@ int	judge_str(char *str, va_list args)
 		else if (tgt == 'c')
 			res += put_char((unsigned char)va_arg(args, int));
 		else if (tgt == 'p')
-			res += ft_putpt(va_arg(args, uintptr_t)) - 2;
+			res += ft_putpt(va_arg(args, uintptr_t)) - FORMAT_SIZE;
 		else if (tgt == 'X' || tgt == 'x')
-			res += ft_puthex(va_arg(args, int), tgt) - 2;
+			res += ft_puthex(va_arg(args, int), tgt) - FORMAT_SIZE;
 		else if (tgt == '%')
 			res += put_char('%');
 		str += 2;
